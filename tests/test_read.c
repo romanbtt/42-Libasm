@@ -6,7 +6,7 @@
 /*   By: romanbtt <marvin@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 10:04:43 by romanbtt          #+#    #+#             */
-/*   Updated: 2021/02/08 21:08:44 by romanbtt         ###   ########.fr       */
+/*   Updated: 2021/02/09 15:36:55 by romanbtt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	test_read2(char *file, bool create_error)
 		test_read3(buff_write, buff_ft_write, -3);
 		return ;
 	}
-	if (!(fd = open(file, O_RDWR)))
+	if (!(fd = open(file, O_RDONLY)))
 	{
 		printf("Open() has return an error.\n\n");
 		return ;

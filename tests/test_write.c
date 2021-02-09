@@ -6,7 +6,7 @@
 /*   By: romanbtt <marvin@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 10:04:13 by romanbtt          #+#    #+#             */
-/*   Updated: 2021/02/08 21:47:01 by romanbtt         ###   ########.fr       */
+/*   Updated: 2021/02/09 15:33:36 by romanbtt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static void	test_write2(char *file, char *str, bool create_error)
 		test_write3("test_error.txt", -3, "Test error");
 		return ;
 	}
-	if (!(fd = open(file, O_CREAT | O_RDWR | O_APPEND, 777)))
+	if (!(fd = open(file, O_CREAT | O_WRONLY | O_APPEND, 0777)))
 	{
 		printf("Open() has return an error.\n\n");
 		return ;
@@ -76,7 +76,7 @@ void		test_write(void)
 {
 	char long_str[1024];
 
-	system("rm -rf tests_write/ mkdir tests_write/; ");
+	system("rm -rf tests_write/ ; mkdir tests_write/");
 	memset(long_str, 48, 1024);
 	long_str[1023] = '\0';
 	printf("\n\033[1;32m<----------- Test ft_write ----------->\033[0m\n\n");
